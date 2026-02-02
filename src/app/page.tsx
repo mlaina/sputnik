@@ -12,6 +12,7 @@ import { Boulder, Sector, GradeColor } from '@/types'
 import { GRADES } from '@/lib/constants/grades'
 import Link from 'next/link'
 import Image from 'next/image'
+import { BottomNav } from '@/components/ui/BottomNav'
 
 type ViewMode = 'map' | 'list'
 
@@ -105,7 +106,8 @@ export default function HomePage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6">
+    <div className="flex flex-col h-full">
+    <div className="flex-1 overflow-auto max-w-7xl mx-auto px-4 py-6 w-full">
       {/* Filters */}
       <div className="space-y-4 mb-6">
         <div className="flex flex-wrap items-center gap-4">
@@ -232,6 +234,8 @@ export default function HomePage() {
           </div>
         )}
       </Modal>
+    </div>
+    <BottomNav />
     </div>
   )
 }
